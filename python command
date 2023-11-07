@@ -1,0 +1,11 @@
+test
+
+tracking --exp_id mot17_half --dataset mot --input_h 544 --input_w 960 --num_classes 1 --dataset_version 17halfval --gpus 0 --pre_hm --ltrb_amodal --track_thresh 0.4 --pre_thresh 0.5 --load_model /home/beeno/pycharm/py_code/CenterTrack/exp/tracking/mot17_half/model_last.pth --refine_thresh 0.45 --patch_thresh 0 --num_patch_val 1 --eva --nms_thre 0.9 --nms_thre_nd 0.55 --real_num_queries 300 --hm_prob_init 0.1 --dataty_debug val --dec_layers 6 --hungarian --max_age 32 --new_thresh 0.45
+
+train
+
+tracking --exp_id mot17_half --dataset custom --custom_dataset_ann_path /home/beeno/pycharm/py_code/CenterTrack/data/mot17/annotations/_half.json --custom_dataset_img_path /home/beeno/pycharm/py_code/CenterTrack/data/mot17/train/ --input_h 544 --input_w 960 --num_classes 1 --pre_hm --ltrb_amodal --same_aug --hm_disturb 0.05 --lost_disturb 0.4 --fp_disturb 0.1 --gpus 0,1 --batch_size 8 --master_batch_size 4 --print_iter 10 --val_intervals 5 --lr 2e-4 --lr_step 60 --num_epochs 100 --num_workers 4 --save_all --load_track_model /home/beeno/pycharm/py_code/CenterTrack/exp/tracking/mot17_half/paper_original_custom_dataset_amp_gradaccu_bsz16/model_70.pth --load_model /home/beeno/pycharm/py_code/CenterTrack/exp/tracking/mot17_half/paper_original_custom_dataset_amp_gradaccu_bsz16/model_70.pth --dataty train --transformer_trainonly --real_num_queries 300 --dec_layers 6 --shift 0.04 --scale 0.05 --accum_iter 2
+
+
+pre_train on crowdhuman
+
